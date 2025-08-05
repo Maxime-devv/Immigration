@@ -58,8 +58,9 @@ const langageEcriture = selected === "Français" ? langageEcritureFr : langageEc
             setRaison("");
 
             toast.success(langageEcriture.texteTOAST);
+            const backendUrl = process.env.REACT_APP_BACKEND_URL || "http://localhost:3000/api/";
             const response = await fetch(
-                `${process.env.REACT_APP_BACKEND_URL}send-emails`, {
+                `${backendUrl}send-emails`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
