@@ -1,0 +1,26 @@
+html {
+    scroll-behavior: smooth;
+  }
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  @keyframes moveY {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(50px); } 
+    100% { transform: translateY(0); } 
+  }
+  @keyframes height {
+      from { height: 500px; }
+      to { height: fit-content; }
+    }
+  @layer utilities {
+    .animate-[moveY_2s_linear_infinite] {
+      animation: moveY 2s linear infinite;
+    }
+  @layer utilities{
+    .animate-[moveHeight_2s] {
+        animation: height 2s ease-in-out;
+    }
+  }
+
+  }

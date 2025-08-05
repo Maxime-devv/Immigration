@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes plus {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@layer utilities {
+  .animate-plus {
+    animation: plus 2s linear infinite;
+  }
+}
