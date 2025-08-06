@@ -6,7 +6,7 @@ import Travailleur from "../../images/travailleur.jpg";
 import Tourist from "../../images/plane.jpg";
 import { useState } from "react";
 import { useLangage } from "../Context/LangageContext";
-import { langageEcritureEn, langageEcritureFr } from "../../../Data/LangageEcriture";
+import { langageEcritureEn, langageEcritureFr } from "../../Data/LangageEcriture";
 import Card from "../card/Card";
 import "./Temporaire.css";
 const Temporaire = () => {

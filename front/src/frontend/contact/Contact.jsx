@@ -2,7 +2,7 @@ import Form from "../form/Form";
 import { useLangage, } from "../Context/LangageContext";
 import CISR from "../../images/cisr.png";
 import IRB from "../../images/irb.png";
-import { langageEcritureFr, langageEcritureEn } from "../../../Data/LangageEcriture";
+import { langageEcritureFr, langageEcritureEn } from "../../Data/LangageEcriture";
 const Contact = () => {
     const {selected} = useLangage();
     const langageEcriture = selected === "Français" ? langageEcritureFr : langageEcritureEn;

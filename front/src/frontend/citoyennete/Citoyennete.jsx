@@ -1,5 +1,5 @@
 import { useLangage } from "../Context/LangageContext";
-import { langageEcritureEn, langageEcritureFr } from "../../../Data/LangageEcriture";
+import { langageEcritureEn, langageEcritureFr } from "../../Data/LangageEcriture";
 import CC from "../../images/cc.jpg"
 const Citoyennete = () =>{
     const {selected} = useLangage();

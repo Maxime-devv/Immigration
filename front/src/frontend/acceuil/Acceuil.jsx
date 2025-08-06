@@ -1,7 +1,7 @@
 import imageIm from "../../images/paysage.jpg"
 import Canada from "../../images/canada.jpg"
 import "./Acceuil.css"
-import { langageEcritureFr, langageEcritureEn } from "../../../Data/LangageEcriture"
+import { langageEcritureFr, langageEcritureEn } from "../../Data/LangageEcriture"
 import { useLangage } from "../Context/LangageContext"
 import Leaf from "../../images/leaf.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

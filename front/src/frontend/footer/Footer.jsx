@@ -1,4 +1,4 @@
-import { langageEcritureEn, langageEcritureFr } from "../../../Data/LangageEcriture"
+import { langageEcritureEn, langageEcritureFr } from "../../Data/LangageEcriture"
 import { useLangage } from "../Context/LangageContext"
 const Footer = () =>{
     const {selected} = useLangage();

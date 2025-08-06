@@ -1,5 +1,5 @@
 import { useLangage } from "../Context/LangageContext";
-import { langageEcritureEn, langageEcritureFr } from "../../../Data/LangageEcriture";
+import { langageEcritureEn, langageEcritureFr } from "../../Data/LangageEcriture";
 import demandeur from "../../images/demandeur.jpg";
 const Daa = () =>{
     const {selected} = useLangage();
