@@ -1,7 +1,7 @@
 import "./Navbar.css";
 import routeImm from "../../images/route-imm.png";
 import Langage from "../language/Langage";
-import { langageEcritureEn, langageEcritureFr } from "../../Data/LangageEcriture";
+import { langageEcritureEn, langageEcritureFr } from "../../../Data/LangageEcriture";
 import { useLangage } from "../Context/LangageContext";
 import { useState, useEffect, useRef } from "react";
 import "./Navbar.css";

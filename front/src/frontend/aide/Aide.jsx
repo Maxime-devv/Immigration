@@ -1,5 +1,5 @@
 import { useLangage } from "../Context/LangageContext";
-import { langageEcritureEn, langageEcritureFr } from "../../Data/LangageEcriture";
+import { langageEcritureEn, langageEcritureFr } from "../../../Data/LangageEcriture";
 import aideV from "../../images/aide.jpg"
 import { FaCheck, FaBullseye,FaThumbtack   } from "react-icons/fa";
 const Aide = () =>{

@@ -5,7 +5,7 @@
 /app/node_modules
 /.pnp
 .pnp.js
-/src/node_modules
+/front/node_modules
 # testing
 /coverage
 
@@ -20,7 +20,7 @@
 .env.production.local
 /app/.env
 .env
-/src/.env
+/front/.env
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

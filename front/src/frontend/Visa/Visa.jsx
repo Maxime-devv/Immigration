@@ -1,5 +1,5 @@
 import { useLangage } from "../Context/LangageContext";
-import { langageEcritureEn, langageEcritureFr } from "../../Data/LangageEcriture";
+import { langageEcritureEn, langageEcritureFr } from "../../../Data/LangageEcriture";
 import GrandParents from "../../images/grandParents.jpg";
 import { FaExclamationTriangle } from "react-icons/fa";
 const Visa = () =>{

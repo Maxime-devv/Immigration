@@ -13,7 +13,7 @@ import Vieux from "../../images/vieuxQ.jpg";
 import { useState } from "react";
 import Card from "../card/Card";
 import { useLangage } from "../Context/LangageContext";
-import { langageEcritureEn, langageEcritureFr } from "../../Data/LangageEcriture";
+import { langageEcritureEn, langageEcritureFr } from "../../../Data/LangageEcriture";
 const Permanent = () => {
     const [textG, setTextG] = useState(false);
     const [textT, setTextT] = useState(false);

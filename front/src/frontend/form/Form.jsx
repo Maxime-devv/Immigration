@@ -2,7 +2,7 @@ import { use, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useLangage } from "../Context/LangageContext";
-import { langageEcritureEn, langageEcritureFr } from "../../Data/LangageEcriture";
+import { langageEcritureEn, langageEcritureFr } from "../../../Data/LangageEcriture";
 const Form = () => {
 const[name, setName] = useState("");
 const[lastName, setLastName] = useState("");

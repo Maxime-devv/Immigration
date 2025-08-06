@@ -1,4 +1,4 @@
-import { langageEcritureEn, langageEcritureFr } from "../../Data/LangageEcriture";
+import { langageEcritureEn, langageEcritureFr } from "../../../Data/LangageEcriture";
 import { useLangage } from "../Context/LangageContext";
 import { FaCheck } from "react-icons/fa";
 import Prng from "../../images/parrainage.jpg";
