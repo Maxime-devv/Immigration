@@ -6,6 +6,7 @@ const cors = require("cors");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+console.log("EMAIL_USER =", process.env.EMAIL_USER);
 app.use(express.json());
 app.options("*", cors());
 app.use((req,res,next)=> {
