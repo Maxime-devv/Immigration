@@ -97,7 +97,7 @@ const Navbar = () => {
             {langageEcriture.texteAbout}
         </a>
         </div>
-        <div className="lg:hidden flex flex-col items-center h-full justify-center hover:cursor-pointer"
+        <div className="lg:hidden flex flex-col items-center h-full pr-4 justify-center hover:cursor-pointer"
             onClick={()=> setSide(true)}>
             <span className=" w-7 h-1 bg-black"/>
             <span className=" w-7 h-1 bg-black mt-1"/>
