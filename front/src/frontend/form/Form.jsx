@@ -120,7 +120,7 @@ const langageEcriture = selected === "Français" ? langageEcritureFr : langageEc
             {dateError2 && <p className="text-red-500 text-center mb-2">{messageErreur}</p> }
             </div>
             <div className="flex flex-col w-full items-center justify-center gap-y-5">
-            <div className="flex flex-col md:flex-row gap-5 items-center justify-between w-[70%]">
+            <div className="flex flex-col lg:flex-row gap-5 items-center justify-between w-[70%]">
             <label className="text-[18px] ">{langageEcriture.texteReservez}</label>
             <input type="datetime-local"
                 lang="en"
@@ -133,7 +133,7 @@ const langageEcriture = selected === "Français" ? langageEcritureFr : langageEc
                 {dateError && <p className="text-red-500">{langageEcriture.texteErreur4}</p> }
            </div>
             <div className="flex flex-col w-full items-center justify-center gap-y-5">
-                <div className="flex flex-col md:flex-row  gap-5 items-center justify-between w-[70%]">
+                <div className="flex flex-col lg:flex-row  gap-5 items-center justify-between w-[70%]">
                     <label className="text-[18px]" for="choix">{langageEcriture.texteRaison} :</label>
                     <select id="choix" value={raison} onChange={(e) => setRaison(e.target.value)} 
                     className="pt-3 pb-3 pl-1 pr-1 mb-3 w-64" required>

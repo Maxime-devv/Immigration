@@ -63,7 +63,7 @@ const Navbar = () => {
     return(
         <div className={`flex h-fit ${bgNav} justify-between items-center ${textC} px-4 py-2 w-full`}>
     {/* Conteneur des liens avec scroll horizontal si besoin */}
-    <div className="flex items-center h-full space-x-4 w-full">
+    <div className="flex items-center h-full space-x-1 lg:space-x-4 w-full pr-4">
         {/* Logo qui ne rétrécit pas */}
         <a href="/" className="shrink-0 w-[200px] md:w-auto mr-10">
             <img src={routeImm} className="w-auto h-14 md:h-16" />
@@ -97,7 +97,7 @@ const Navbar = () => {
             {langageEcriture.texteAbout}
         </a>
         </div>
-        <div className="lg:hidden flex flex-col items-center h-full pr-2 justify-center hover:cursor-pointer"
+        <div className="lg:hidden flex flex-col items-center h-full justify-center hover:cursor-pointer"
             onClick={()=> setSide(true)}>
             <span className=" w-7 h-1 bg-black"/>
             <span className=" w-7 h-1 bg-black mt-1"/>

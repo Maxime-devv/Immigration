@@ -10,7 +10,7 @@ const Contact = () => {
         <div className=" min-h-screen flex-grow ">
             <div className="bg-stone-200 flex flex-col items-center justify-center text-black max font-bold
              h-[300px]">
-                <h1 className="md:text-[30px] text-[20px]">{langageEcriture.texteConsultation}</h1>
+                <h1 className="text-[30px] text-center">{langageEcriture.texteConsultation}</h1>
                 <a href={selected === "Français" ? "https://registre.college-ic.ca/Public-Register-FR/Licensee/Profile.aspx?ID=20635" : "https://register.college-ic.ca/Public-Register-EN/Licensee/Profile.aspx?ID=20635"}><img src={selected === "Français" ? CISR : IRB} alt="CISR" className="mt-3"/></a>
             </div>
             <div className="flex  flex-col items-center justify-center font-bold md:text-[27px] mt-3 text-[20px]">
