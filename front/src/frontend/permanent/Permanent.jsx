@@ -28,7 +28,7 @@ const Permanent = () => {
     return (
         <div className="bg-blue-50 min-h-screen flex-grow">
             <div id="permanent" className="lg:p-20 p-10 w-full flex flex-col items-center justify-center ">
-                <h1 className="font-bold text-[30px]">{langageEcriture.texteResidence}</h1>
+                <h1 className="font-bold text-[30px] text-center">{langageEcriture.texteResidence}</h1>
                 <p className="font-semibold  w-full text-center mt-5 text-[20px]">{langageEcriture.texteR}</p>
             </div>
             <div className="lg:grid lg:grid-cols-2 place-items-center flex flex-col items-center lg:items-start mt-10 h-fit">

@@ -15,8 +15,8 @@ const Contact = () => {
             </div>
             <div className="flex  flex-col items-center justify-center font-bold md:text-[27px] mt-3 text-[20px]">
                 <h1>📞 1-514-604-4786</h1>
-                <h1 className="mt-2 md:text-[24px] text-[15px]">📧<a href="mailto:info@routesimmigration.ca" className="underline">info@routesimmigration.ca </a> 
-                {langageEcriture.texteOu} <a href="mailto:info@routesimmigration.com" className="underline">info@routesimmigration.com</a></h1>
+                <h1 className="mt-2 text-[24px] flex flex-col lg:flex-row items-center space-x-4">📧<a href="mailto:info@routesimmigration.ca" className="underline">info@routesimmigration.ca </a> 
+                <p>{langageEcriture.texteOu} </p><a href="mailto:info@routesimmigration.com" className="underline">info@routesimmigration.com</a></h1>
             </div>
             <Form/>
         </div>

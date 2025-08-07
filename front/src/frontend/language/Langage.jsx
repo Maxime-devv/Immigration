@@ -5,7 +5,7 @@ const Langage = () =>{
     const {selected, setSelected} = useLangage();
 
     return(
-        <div className="w-36 flex justify-center items-center pr-6 mr-4">       
+        <div className="w-36 flex justify-center items-center pr-3">       
             <select
             value={selected}
             onChange={(e) => setSelected(e.target.value)}

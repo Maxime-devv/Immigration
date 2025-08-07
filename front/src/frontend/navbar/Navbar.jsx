@@ -97,12 +97,13 @@ const Navbar = () => {
             {langageEcriture.texteAbout}
         </a>
         </div>
-        <div className="lg:hidden flex flex-col items-center h-full pr-4 justify-center hover:cursor-pointer"
+        <div className="lg:hidden flex flex-col items-center h-full pr-2 justify-center hover:cursor-pointer"
             onClick={()=> setSide(true)}>
             <span className=" w-7 h-1 bg-black"/>
             <span className=" w-7 h-1 bg-black mt-1"/>
             <span className=" w-7 h-1 bg-black mt-1"/>
         </div>
+        <Langage />
     </div>
     {side && (
      <div className={`lg:hidden w-1/2 h-screen bg-gray-950 text-white font-semibold right-0 
@@ -145,7 +146,6 @@ const Navbar = () => {
     {side && (
         <div className="fixed inset-0 bg-gray-600 opacity-50 z-9 md:hidden"></div>
       )}
-    <Langage />
 </div>
 
 

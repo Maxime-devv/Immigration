@@ -6,7 +6,7 @@ const Footer = () =>{
     return(
 
         <div className="bg-black h-[70px] flex justify-center items-center">
-            <p className="text-[22px] text-white ">{langageEcriture.texteFooter}</p>
+            <p className="text-[22px] text-white text-center">{langageEcriture.texteFooter}</p>
         </div>
     )
 }

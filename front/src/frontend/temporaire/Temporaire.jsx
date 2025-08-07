@@ -20,7 +20,7 @@ const Temporaire = () => {
     return (
         <div className="bg-blue-50 min-h-screen flex-grow">
             <div id="permanent" className="p-20 w-full flex flex-col items-center justify-center">
-                <h1 className="font-bold text-[30px]">{langageEcriture.tStatus}</h1>
+                <h1 className="font-bold text-[30px] text-center">{langageEcriture.tStatus}</h1>
                 <p className="font-semibold text-center mt-5 w-full text-[20px]">{langageEcriture.texteT1}</p>
                 <p className="font-semibold text-center mt-5 w-full text-[20px]">{langageEcriture.texteT2}</p>
                 <p className="font-semibold text-center mt-5 w-full text-[20px]">{langageEcriture.texteT3}</p>

@@ -10,7 +10,7 @@ const Parrainage = () =>{
             <h1 className="text-5xl text-center lg:text-start font-bold text-red-700 ml-10 mb-4">{langageEcriture.texteParrainage}</h1>
             <div className="flex lg:flex-row flex-col items-center justify-center  gap-10  mt-10">
 
-            <div className="text-gray-700 space-y-3 mt-4 mb-10 w-full lg:w-1/2 lg:mr-5 lg:ml-0 ml-20 mr-20 text-[20px] text-justify">
+            <div className="text-gray-700 space-y-3 mt-4 mb-10 w-full lg:w-1/2 lg:mr-5 lg:ml-0 ml-20 mr-20 text-[20px]">
                 <p>{langageEcriture.texteP1}</p>
                 <p>{langageEcriture.texteP2} <span className="font-bold text-red-700">{langageEcriture.texteP3}</span>{langageEcriture.texteP4}</p>
                 <p className="text-[25px] pt-10 font-semibold text-red-700">{langageEcriture.texteP5}</p>

@@ -23,7 +23,7 @@ const Acceuil = () =>{
         </div>
         <div className="w-full lg:flex justify-between items-center">
         <div className="flex flex-col transition-transform lg:w-[65%] w-full pl-10 pr-10 lg:pl-0 lg:pr-0">
-        <h2 className="m-10 text-[34px] font-bold">{langageEcriture.texte2}</h2>
+        <h2 className="m-10 text-[34px] font-bold text-center lg:text-left">{langageEcriture.texte2}</h2>
         <img src={Leaf} className="w-[50px] h-[50px] ml-10"/>
         <p className="ml-10 text-[20px]"><strong className="text-red-500">Routes Immigration Inc.</strong>
         {langageEcriture.texte3}</p><br/>

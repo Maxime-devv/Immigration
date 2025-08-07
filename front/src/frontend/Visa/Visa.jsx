@@ -9,7 +9,7 @@ const Visa = () =>{
         <div className="bg-cyan-100 py-8 px-6 rounded-lg shadow-lg min-h-screen flex-grow">
             <h1 className="text-5xl font-extrabold text-blue-800 ml-10">{langageEcriture.textVisa}</h1>
             <div className="flex lg:flex-row flex-col gap-10 items-center justify-center mt-10 ml-10 mr-10">
-            <div className="space-y-6 max-w-4xl text-gray-700 text-[20px] text-justify w-full  mr-5">
+            <div className="space-y-6 max-w-4xl text-gray-700 text-[20px] w-full  mr-5">
                 <p className=" text-blue-700 font-bold text-[25px]">{langageEcriture.texteVisa1}</p>
                 <p className=" text-gray-700">{langageEcriture.texteVisa2}</p>
                 <p className=" text-gray-700">{langageEcriture.texteP2} <span className="font-bold text-blue-700">{langageEcriture.texteP3}</span> {langageEcriture.texteVisa3}</p>
