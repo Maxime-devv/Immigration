@@ -106,7 +106,7 @@ const Navbar = () => {
         <Langage />
     </div>
     {side && (
-     <div className={`lg:hidden w-1/2 h-screen bg-gray-950 text-white font-semibold right-0 
+     <div className={`lg:hidden w-[70%] h-screen bg-gray-950 text-white font-semibold right-0 
         top-0 z-10 fixed transition-transform duration-700 ease-in-out ${
           side ? "translate-x-0" : "translate-x-full"
         }`}>
