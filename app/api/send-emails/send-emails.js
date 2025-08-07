@@ -1,7 +1,21 @@
 const axios = require('axios');
 require('dotenv').config(); 
 
-const sendEmail = async (fromm, subjectt, textt) => {
+const sendEmail = async (fromm, subjectt, textt, captcha) => {
+ if (!captcha) {
+    return res.status(400).json({ message: 'Captcha manquant.' });
+  }
+
+  try{
+
+    const captchaResponse = await axios.post(`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.CLE_SECRETE}&response=${captcha}`)
+
+     const { success} = captchaResponse.data;
+
+     if(!success) {
+        return res.status(400).json({ message: 'Captcha invalide.' });
+     }
+
   const payload = {
     sender: {
       email: process.env.EMAIL_USER,
@@ -45,7 +59,6 @@ const sendEmail = async (fromm, subjectt, textt) => {
   </body>
 </html>`,
   };
-  try {
     const response = await axios.post('https://api.brevo.com/v3/smtp/email', payload, {
       headers: {
         'Content-Type': 'application/json',
@@ -54,11 +67,7 @@ const sendEmail = async (fromm, subjectt, textt) => {
     });
 
     console.log('✅ Email envoyé :', response.data);
-  } catch (error) {
-    console.error('❌ Erreur d’envoi :', error.response ? error.response.data : error);
-  }
 
-  try {
     const responseNoTemplate = await axios.post('https://api.brevo.com/v3/smtp/email', payloadNoTemplate, {
       headers: {
         'Content-Type': 'application/json',
@@ -66,8 +75,9 @@ const sendEmail = async (fromm, subjectt, textt) => {
       },
     });
     console.log('✅ Email envoyé sans template (deuxième destinataire) :', responseNoTemplate.data);
-  } catch (error) {
-    console.error('❌ Erreur d’envoi sans template :', error.response ? error.response.data : error);
+  }catch (error) {
+    console.error('❌ Erreur interne:', error);
+    return res.status(500).json({ message: 'Erreur interne.' });
   }
 };
 

@@ -24,10 +24,10 @@ app.use((req,res,next)=> {
 app.use(cors());
 
 app.post("/api/send-emails", async (req, res,next)=>{
-    const {from,subject, text} = req.body;
+    const {from,subject, text, captcha} = req.body;
 
     try{
-        await sendEmail(from,subject,text);
+        await sendEmail(from,subject,text, captcha);
         res.status(200).json({ message: "Email envoyé avec succès" });
     } catch (error) {
         res.status(500).json({ message: "Erreur d'envoi", error });

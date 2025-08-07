@@ -1,8 +1,9 @@
-import { use, useState } from "react";
+import { useRef, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useLangage } from "../Context/LangageContext";
 import { langageEcritureEn, langageEcritureFr } from "../../Data/LangageEcriture";
+import ReCAPTCHA from "react-google-recaptcha";
 const Form = () => {
 const[name, setName] = useState("");
 const[lastName, setLastName] = useState("");
@@ -15,6 +16,8 @@ const[dateError, setDateError] = useState(false);
 const[dateError2, setDateError2] = useState(false);
 const[messageErreur, setMessageErreur] = useState("");
 const {selected} = useLangage();
+const [captchaValue, setCaptchaValue] = useState(null);
+const captchaRef = useRef();
 const langageEcriture = selected === "Français" ? langageEcritureFr : langageEcritureEn;
     const phoneRegex = /^[0-9]+/;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -47,7 +50,7 @@ const langageEcriture = selected === "Français" ? langageEcritureFr : langageEc
   `L'équipe d'Immigration Inc`;
 
 
-        if(phoneRegex.test(phone) && emailRegex.test(email)){
+        if(phoneRegex.test(phone) && emailRegex.test(email) && !dateError && captchaValue){
             setDateError2(false);
             setName("");
             setLastName("");
@@ -56,7 +59,8 @@ const langageEcriture = selected === "Français" ? langageEcritureFr : langageEc
             setPhone("");
             setMessage("");
             setRaison("");
-
+            setCaptchaValue(null);
+            captchaRef.current.reset();
             toast.success(langageEcriture.texteTOAST);
             const backendUrl = process.env.REACT_APP_BACKEND_URL || "http://localhost:3000/api/";
             const response = await fetch(
@@ -69,17 +73,23 @@ const langageEcriture = selected === "Français" ? langageEcritureFr : langageEc
                     from: email,
                     subject: "Prise de rendez-vous Immigration Inc",
                     text: bodyText,
+                    captcha: captchaValue
                 }),
             });
         }else{
+            if(!dateError){
+                setDateError(true);
+            }
+            if(!phoneRegex.test(phone) || !emailRegex.test(email)){
             setDateError2(true);
+           
             if(!phoneRegex.test(phone) && emailRegex.test(email)){
                 setMessageErreur(langageEcriture.texteErreur);
             }else if(phoneRegex.test(phone) && !emailRegex.test(email)){
                 setMessageErreur(langageEcriture.texteErreur2);
             }else{
                 setMessageErreur(langageEcriture.texteErreur3);
-            }
+            } }
             
         }
     }
@@ -150,9 +160,15 @@ const langageEcriture = selected === "Français" ? langageEcritureFr : langageEc
                 </div>
             </div>
             <label className="mt-3 text-[18px]">{langageEcriture.texteMessage} </label>
-            <textarea value={message} onChange={(e) => setMessage(e.target.value)} 
+            <textarea value={message}  onChange={(e) => setMessage(e.target.value)} 
             className="h-40 w-full flex items-start mt-2"/>
-            <button type="submit" className="mt-3 bg-stone-500 p-3 w-40 hover:bg-stone-600 text-[18px]">{langageEcriture.texteReserver}</button>
+             <ReCAPTCHA
+                ref={captchaRef}
+                sitekey={process.env.REACT_APP_CLE_DU_SITE}
+                onChange={(value) => setCaptchaValue(value)}
+                className="mt-3"
+            />
+            <button type="submit"  disabled={!captchaValue} className="mt-3 bg-stone-500 p-3 w-40 hover:bg-stone-600 text-[18px]">{langageEcriture.texteReserver}</button>
             </form>
             
         </div>
