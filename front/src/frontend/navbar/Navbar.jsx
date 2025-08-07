@@ -63,9 +63,9 @@ const Navbar = () => {
     return(
         <div className={`flex h-fit ${bgNav} justify-between items-center ${textC} px-4 py-2 w-full`}>
     {/* Conteneur des liens avec scroll horizontal si besoin */}
-    <div className="flex items-center h-full space-x-1 lg:space-x-4 w-full pr-4">
+    <div className="flex items-center h-full space-x-2 lg:space-x-4 w-full">
         {/* Logo qui ne rétrécit pas */}
-        <a href="/" className="shrink-0 w-[200px] md:w-auto mr-10">
+        <a href="/" className="shrink-0 w-[200px] md:w-auto mr-3">
             <img src={routeImm} className="w-auto h-14 md:h-16" />
         </a>
         <div className="items-center h-full space-x-2 w-full hidden lg:flex md:flex-wrap pr-5 justify-center">
