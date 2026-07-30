@@ -40,13 +40,14 @@ const Form = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!phoneRegex.test(phone) || !emailRegex.test(email) || dateError || !captchaValue) {
+    const phoneDigitsOnly = phone.replace(/\D/g, "");
+    if (!phoneRegex.test(phoneDigitsOnly) || !emailRegex.test(email) || dateError || !captchaValue) {
       if (!date) setDateError(true);
-      if (!phoneRegex.test(phone) || !emailRegex.test(email)) {
+      if (!phoneRegex.test(phoneDigitsOnly) || !emailRegex.test(email)) {
         setDateError2(true);
-        if (!phoneRegex.test(phone) && emailRegex.test(email)) {
+        if (!phoneRegex.test(phoneDigitsOnly) && emailRegex.test(email)) {
           setMessageErreur(langageEcriture.texteErreur);
-        } else if (phoneRegex.test(phone) && !emailRegex.test(email)) {
+        } else if (phoneRegex.test(phoneDigitsOnly) && !emailRegex.test(email)) {
           setMessageErreur(langageEcriture.texteErreur2);
         } else {
           setMessageErreur(langageEcriture.texteErreur3);
@@ -58,7 +59,7 @@ const Form = () => {
     setDateError2(false);
     setIsSubmitting(true);
 
-    const phoneS = phone.toString().replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
+    const phoneS = phoneDigitsOnly.toString().replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
     const dateS = date.toString().replace("T", " à ");
 
     const bodyText =
